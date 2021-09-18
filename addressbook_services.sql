@@ -38,4 +38,10 @@ SELECT FirstName FROM address WHERE City = 'Banglore' OR State = 'Karnataka'
 use addressbook_services;
 
 -- To retrieve count of specific records
-SELECT COUNT(FirstName) AS CountByCityState FROM address WHERE City = 'Bangalore' AND State = 'Karnataka';
+SELECT COUNT(FirstName) AS CountByCityState FROM address WHERE City = 'Banglore' AND State = 'Karnataka';
+-- uc-8
+-- To go to the database created
+use addressbook_services;
+
+-- To retrieve specific records in order
+SELECT * FROM address WHERE City = 'Banglore' ORDER BY FirstName;
