@@ -28,3 +28,5 @@ VALUES
  use addressbook_services;
  UPDATE address SET City = 'Trisur', State = 'Kerala'
 WHERE FirstName = 'Rupali';
+use addressbook_services;
+DELETE FROM address WHERE FirstName='Asha'
