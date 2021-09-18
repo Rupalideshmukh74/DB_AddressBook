@@ -25,3 +25,6 @@ VALUES
 ('Raja','M','2nd cros Rajaji Nagar','Gadag','Andra','80453','0987654321','raja@gmail.com');
  
  select * from address;
+ use addressbook_services;
+ UPDATE address SET City = 'Trisur', State = 'Kerala'
+WHERE FirstName = 'Rupali';
