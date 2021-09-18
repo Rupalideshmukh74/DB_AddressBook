@@ -30,3 +30,6 @@ VALUES
 WHERE FirstName = 'Rupali';
 use addressbook_services;
 DELETE FROM address WHERE FirstName='Asha'
+use addressbook_services;
+--To retrived specific record
+SELECT FirstName FROM address WHERE City = 'Banglore' OR State = 'Karnataka' 
