@@ -45,3 +45,22 @@ use addressbook_services;
 
 -- To retrieve specific records in order
 SELECT * FROM address WHERE City = 'Banglore' ORDER BY FirstName;
+-- uc-9
+-- To go to the database created
+use addressbook_services;
+
+-- To alter table by adding new columns
+ALTER TABLE address ADD BookName VARCHAR(20), BookType VARCHAR(10);
+
+-- To update table
+UPDATE address SET BookName='Book1', BookType='Friends' WHERE FirstName='Rupali' OR FirstName='Nikita';
+UPDATE address SET BookName='Book2', BookType='Family' WHERE FirstName='Porvi';
+UPDATE address SET BookName='Book3', BookType='Profession' WHERE FirstName='Raja'; 
+-- uc-10
+-- To go to the database created
+use addressbook_services;
+
+-- To retrieve count of specific records
+SELECT COUNT(BookType) AS AddressCount, BookType FROM address WHERE BookType='Friends' GROUP BY BookType;
+SELECT COUNT(BookType) AS AddressCount, BookType FROM address WHERE BookType='Family' GROUP BY BookType;
+SELECT COUNT(BookType) AS AddressCount, BookType FROM address WHERE BookType='Profession' GROUP BY BookType;
