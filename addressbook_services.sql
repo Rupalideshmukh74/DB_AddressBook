@@ -110,3 +110,49 @@ CREATE TABLE Person_AddressBook
 	PersonID INT FOREIGN KEY REFERENCES Person(PersonID),
 	BookID INT FOREIGN KEY REFERENCES BookTypes(BookID)
 );
+-- uc-13
+-- To go to the database created
+use addressbook_services;
+
+
+-- To insert into the table Person created
+INSERT INTO Person
+VALUES
+('Ragu','ram','ragu@gmail.com','1234567893'),
+('Ravi','gowda','ravi@gmail.com','8934567893');
+
+SELECT * FROM Person;
+
+-- To insert into the table Addresses created
+INSERT INTO Addresses
+VALUES
+(1, 'Bangalore','Karnataka',560078),
+(2, 'Mandya','Karnataka',580068);
+
+SELECT * FROM Addresses;
+
+-- To insert into the table BookTypes created
+INSERT INTO BookTypes
+VALUES
+('Book1','Freinds'),
+('Book2','Family'),
+('Book3','Profession');
+
+SELECT * FROM BookTypes;
+
+-- To insert into the table Person_AddressBook created
+INSERT INTO Person_AddressBook
+VALUES
+(1,2),
+(2,3);
+
+SELECT * FROM Person_AddressBook;
+
+-- uc-6
+SELECT p.FirstName AS "Name",  a.City FROM Person p INNER JOIN Addresses a ON p.PersonID=a.PersonID WHERE a.City='Bangalore';
+-- uc-7
+SELECT a.City,COUNT(City) AS 'CityCount' FROM Addresses a INNER JOIN Person p ON p.PersonID=a.PersonID GROUP BY City;
+-- uc-8
+SELECT a.State, COUNT(State) AS 'StateCount' FROM Addresses a INNER JOIN Person p ON p.PersonID=a.PersonID GROUP BY State;
+-- uc-10
+SELECT p.FirstName, a.City FROM Person p INNER JOIN Addresses a ON p.PersonID=a.PersonID WHERE City='Bangalore' ORDER BY (FirstName);
